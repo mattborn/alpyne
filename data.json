@@ -1,0 +1,27 @@
+{
+  "user": {
+    "name": "Sofia Davis",
+    "email": "sofia@example.com",
+    "avatar": "https://i.pravatar.cc/40?u=sofia"
+  },
+  "clients": [
+    {
+      "id": "1",
+      "name": "Acme Corp",
+      "industry": "Technology",
+      "status": "Active"
+    },
+    {
+      "id": "2",
+      "name": "Globex Inc",
+      "industry": "Manufacturing",
+      "status": "Active"
+    },
+    {
+      "id": "3",
+      "name": "Stark Industries",
+      "industry": "Defense",
+      "status": "Active"
+    }
+  ]
+}

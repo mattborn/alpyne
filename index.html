@@ -16,7 +16,7 @@
         <nav>
           <a href="about">About</a>
           <a href="migrate">Migrate</a>
-          <a href="login">Log in</a>
+          <a href="https://app.getalpyne.com">Log in</a>
           <div class="button">Get a demo</div>
         </nav>
       </div>
@@ -41,42 +41,141 @@
               <span></span>
               <span></span>
             </div>
-            <div class="browser-address">app.alpyne.co</div>
+            <div class="browser-address">app.getalpyne.com</div>
           </div>
           <div class="browser-content">
             <div class="app">
               <nav class="app-nav">
                 <div class="nav-header">
                   <span class="brand">Alpyne</span>
-                  <i class="fa-light fa-arrow-left-to-line"></i>
+                  <!-- <i class="fa-light fa-arrow-left-to-line"></i> -->
                 </div>
 
                 <div class="nav-section">
                   <span class="nav-label">General</span>
-                  <button class="nav-button active" data-view="home">
-                    <i class="fa-light fa-house"></i>
-                    <span>Home</span>
+                  <button class="nav-button active" data-view="portfolio">
+                    <i class="fa-light fa-briefcase"></i>
+                    <span>Portfolio</span>
                   </button>
                 </div>
 
                 <div class="nav-section">
                   <span class="nav-label">Clients</span>
-                  <button class="nav-button" data-view="clients">
-                    <i class="fa-light fa-buildings"></i>
-                    <span>Clients</span>
-                    <i class="fa-light fa-angle-down"></i>
+                  <div class="client-picker">
+                    <button class="nav-button" data-view="client-select">
+                      <i class="fa-light fa-building"></i>
+                      <span class="fill">Acme Corp</span>
+                      <i class="fa-light fa-angle-down"></i>
+                    </button>
+                  </div>
+                  <button class="nav-button" data-view="home">
+                    <i class="fa-light fa-house"></i>
+                    <span>Home</span>
                   </button>
-                  <button class="nav-button" data-view="reports">
+                  <button class="nav-button" data-view="connections">
+                    <i class="fa-light fa-plug"></i>
+                    <span>Connections</span>
+                  </button>
+                  <button class="nav-button" data-view="reporting">
                     <i class="fa-light fa-chart-mixed"></i>
-                    <span>Reports</span>
+                    <span>Reporting</span>
+                  </button>
+                  <button class="nav-button" data-view="spreadsheets">
+                    <i class="fa-light fa-table"></i>
+                    <span>Spreadsheets</span>
+                  </button>
+                  <button class="nav-button" data-view="client-settings">
+                    <i class="fa-light fa-gear"></i>
+                    <span>Client Settings</span>
+                  </button>
+                </div>
+
+                <div class="fill"></div>
+
+                <div class="nav-section">
+                  <button class="nav-button" data-view="firm-settings">
+                    <i class="fa-light fa-building"></i>
+                    <span>Firm Settings</span>
+                  </button>
+                  <button class="nav-button" data-view="profile">
+                    <img src="https://i.pravatar.cc/24?u=sofia" class="avatar" alt="Sofia Davis" />
+                    <span class="fill">Sofia Davis</span>
+                    <i class="fa-light fa-angle-down"></i>
                   </button>
                 </div>
               </nav>
 
               <main class="app-main">
-                <div class="view" id="view-home">Home view</div>
-                <div class="view" id="view-clients">Clients view</div>
-                <div class="view" id="view-reports">Reports view</div>
+                <div class="view" id="view-portfolio">
+                  <div class="empty-state">
+                    <h2>Portfolio View</h2>
+                    <p>See how Alpyne helps you manage your entire client portfolio.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-connections">
+                  <div class="empty-state">
+                    <h2>Connections</h2>
+                    <p>Connect and manage all your client's data sources in one place.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-reporting">
+                  <div class="empty-state">
+                    <h2>Reporting</h2>
+                    <p>Create custom reports and dashboards with real-time data from all your connected systems.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-spreadsheets">
+                  <div class="empty-state">
+                    <h2>Spreadsheets</h2>
+                    <p>Sync your financial data directly with Google Sheets for live forecasting and modeling.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-client-settings">
+                  <div class="empty-state">
+                    <h2>Client Settings</h2>
+                    <p>Configure client-specific settings, permissions, and integrations.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-firm-settings">
+                  <div class="empty-state">
+                    <h2>Firm Settings</h2>
+                    <p>Manage your firm's global settings, team members, and billing.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-profile">
+                  <div class="empty-state">
+                    <h2>User Profile</h2>
+                    <p>Manage your personal settings, notifications, and preferences.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-client-1">
+                  <div class="empty-state">
+                    <h2>Acme Corp Dashboard</h2>
+                    <p>View financial metrics, reports, and insights for Acme Corp.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-client-2">
+                  <div class="empty-state">
+                    <h2>Globex Inc Dashboard</h2>
+                    <p>View financial metrics, reports, and insights for Globex Inc.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-client-3">
+                  <div class="empty-state">
+                    <h2>Stark Industries Dashboard</h2>
+                    <p>View financial metrics, reports, and insights for Stark Industries.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
               </main>
             </div>
           </div>
@@ -263,11 +362,12 @@
           <div class="footer-left">
             <a href="" class="brand">Alpyne</a>
             <span class="copyright">© 2025</span>
+            <span class="copyright">Proudly built in Utah</span>
           </div>
           <nav>
             <a href="about">About</a>
             <a href="migrate">Migrate</a>
-            <a href="login">Log in</a>
+            <a href="https://app.getalpyne.com">Log in</a>
             <div class="button">Get a demo</div>
           </nav>
         </div>

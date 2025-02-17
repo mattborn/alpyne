@@ -164,7 +164,6 @@ footer nav a:hover {
 }
 
 nav {
-  align-items: center;
   display: flex;
   gap: 2rem;
 }
@@ -399,87 +398,160 @@ footer nav a:hover,
   margin: 1.5rem auto 0;
 }
 
-/* App styles - at bottom of stylesheet */
-
+/* App */
 .app {
   display: flex;
-  height: 100%;
-  background: #f2f2f2;
+  height: 40rem;
+  min-height: 40rem;
+  overflow: hidden;
 }
 
-/* App navigation */
+/* Navigation */
 .app-nav {
+  background: var(--color-gray-50);
+  border-right: 1px solid var(--color-gray-200);
   display: flex;
   flex-direction: column;
-  width: 240px;
-  padding: 16px;
-  gap: 16px;
-  background: #fff;
+  gap: 1rem;
+  padding: 1rem;
+  width: 16rem;
 }
 
 .nav-header {
+  align-items: center;
   display: flex;
-  align-items: baseline;
-  padding: 16px 0;
-  gap: 8px;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
 
 .nav-section {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .nav-label {
-  font-size: 14px;
+  color: var(--color-gray-600);
+  font-size: 0.75rem;
   font-weight: 500;
-  color: rgba(0, 0, 18, 0.9);
+  padding: 0.5rem;
+  text-transform: uppercase;
 }
 
 .nav-button {
-  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border: none;
-  border-radius: 6px;
   background: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(0, 0, 18, 0.9);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--color-gray-600);
   cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .nav-button:hover {
-  background: rgba(0, 0, 18, 0.05);
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
 }
 
 .nav-button.active {
-  background: rgba(0, 0, 18, 0.1);
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+  font-weight: 500;
 }
 
 .nav-button i {
-  color: rgba(0, 0, 18, 0.5);
+  color: var(--color-gray-400);
+  font-size: 1.25rem;
+  width: 1.25rem;
 }
 
-/* App main content */
-.app-main {
+.nav-button:hover i,
+.nav-button.active i {
+  color: var(--color-gray-600);
+}
+
+.nav-button .avatar {
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.nav-button .fill {
   flex: 1;
+  text-align: left;
+}
+
+/* Client picker */
+.client-picker {
   position: relative;
 }
 
-.view {
+.client-list {
+  background: var(--color-background);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  left: 0;
+  margin-top: 0.25rem;
+  padding: 0.25rem;
   position: absolute;
-  inset: 0;
-  padding: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease;
+  right: 0;
+  top: 100%;
+  z-index: 10;
+}
+
+.client-picker.active .client-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-list .nav-button {
+  border-radius: 0.25rem;
+}
+
+/* Main content */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.view {
+  display: none;
+  flex: 1;
+  padding: 1.5rem;
 }
 
 .view.active {
-  opacity: 1;
-  visibility: visible;
+  display: flex;
+}
+
+/* Empty state */
+.empty-state {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin: auto;
+  max-width: 24rem;
+  text-align: center;
+}
+
+.empty-state h2 {
+  color: var(--color-gray-900);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.empty-state p {
+  color: var(--color-gray-600);
+  margin-bottom: 1rem;
 }
 
 /* ==========================================================================
