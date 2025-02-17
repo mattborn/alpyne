@@ -129,19 +129,44 @@ header .button:hover {
   color: var(--color-background);
 }
 
-header nav a:hover {
-  color: var(--color-accent);
+/* Navigation links */
+nav a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+nav a[aria-current='page'] {
+  opacity: 1;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Header navigation */
+header nav a {
+  color: var(--color-background);
+}
+
+/* Footer navigation */
+footer nav a {
+  color: var(--color-background);
+}
+
+/* Remove old hover states */
+header nav a:hover,
+footer nav a:hover {
+  color: inherit;
 }
 
 nav {
   align-items: center;
   display: flex;
   gap: 2rem;
-}
-
-nav a {
-  color: inherit;
-  text-decoration: none;
 }
 
 section {
