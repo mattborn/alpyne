@@ -42,7 +42,41 @@
             <div class="browser-address">app.alpyne.co</div>
           </div>
           <div class="browser-content">
-            <!-- Interactive preview content will go here -->
+            <div class="app">
+              <nav class="app-nav">
+                <div class="nav-header">
+                  <span class="brand">Alpyne</span>
+                  <i class="fa-light fa-arrow-left-to-line"></i>
+                </div>
+
+                <div class="nav-section">
+                  <span class="nav-label">General</span>
+                  <button class="nav-button active" data-view="home">
+                    <i class="fa-light fa-house"></i>
+                    <span>Home</span>
+                  </button>
+                </div>
+
+                <div class="nav-section">
+                  <span class="nav-label">Clients</span>
+                  <button class="nav-button" data-view="clients">
+                    <i class="fa-light fa-buildings"></i>
+                    <span>Clients</span>
+                    <i class="fa-light fa-angle-down"></i>
+                  </button>
+                  <button class="nav-button" data-view="reports">
+                    <i class="fa-light fa-chart-mixed"></i>
+                    <span>Reports</span>
+                  </button>
+                </div>
+              </nav>
+
+              <main class="app-main">
+                <div class="view" id="view-home">Home view</div>
+                <div class="view" id="view-clients">Clients view</div>
+                <div class="view" id="view-reports">Reports view</div>
+              </main>
+            </div>
           </div>
         </div>
       </div>

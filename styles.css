@@ -373,3 +373,86 @@ footer nav a:hover,
 #transition p {
   margin: 1.5rem auto 0;
 }
+
+/* App styles - at bottom of stylesheet */
+
+.app {
+  display: flex;
+  height: 100%;
+  background: #f2f2f2;
+}
+
+/* App navigation */
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  padding: 16px;
+  gap: 16px;
+  background: #fff;
+}
+
+.nav-header {
+  display: flex;
+  align-items: baseline;
+  padding: 16px 0;
+  gap: 8px;
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 18, 0.9);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 18, 0.9);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: rgba(0, 0, 18, 0.05);
+}
+
+.nav-button.active {
+  background: rgba(0, 0, 18, 0.1);
+}
+
+.nav-button i {
+  color: rgba(0, 0, 18, 0.5);
+}
+
+/* App main content */
+.app-main {
+  flex: 1;
+  position: relative;
+}
+
+.view {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.view.active {
+  opacity: 1;
+  visibility: visible;
+}
