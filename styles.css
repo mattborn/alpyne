@@ -2,12 +2,18 @@
 
 :root {
   --color-background: #fff;
-  --color-primary: #2b4;
   --color-text: #334;
   --color-gray-100: #f2f4f7;
   --color-gray-200: #e4e7ec;
   --color-gray-600: #475467;
+  --color-accent: #2ae;
   --max-width: 72rem;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    --color-accent: color(display-p3 0.133 0.667 0.933);
+  }
 }
 
 * {
@@ -65,9 +71,45 @@ p {
   width: 100%;
 }
 
-header {
+/* Dark background for header/hero/preview */
+header,
+#hero,
+#preview::before {
   background: var(--color-text);
   color: var(--color-background);
+}
+
+/* Preview section positioning */
+#preview {
+  position: relative;
+  padding-top: 0;
+}
+
+#preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: var(--color-text);
+}
+
+#preview .content {
+  position: relative;
+}
+
+/* Adjust browser preview */
+.browser {
+  background: var(--color-gray-100);
+  border-radius: 1rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+header {
   padding: 1.5rem 0;
 }
 
@@ -83,12 +125,12 @@ header .button {
 }
 
 header .button:hover {
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: var(--color-background);
 }
 
 header nav a:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 nav {
@@ -118,7 +160,7 @@ section {
 }
 
 .button:hover {
-  background: var(--color-primary);
+  background: var(--color-accent);
 }
 
 .brand {
@@ -130,12 +172,14 @@ section {
 }
 
 .brand:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* Hero */
 #hero {
   text-align: center;
+  padding-bottom: 12rem;
+  margin-bottom: -6rem;
 }
 
 #hero .content {
@@ -146,15 +190,6 @@ section {
 }
 
 /* Preview */
-.browser {
-  background: var(--color-gray-100);
-  border-radius: 1rem;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
-  overflow: hidden;
-  width: 100%;
-}
-
 .browser-bar {
   align-items: center;
   background: var(--color-gray-200);
@@ -209,8 +244,8 @@ cite {
 .cards {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .card {
@@ -273,12 +308,12 @@ footer .button {
 }
 
 footer .button:hover {
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: var(--color-background);
 }
 
 footer nav a:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .footer-content {
@@ -301,4 +336,40 @@ footer nav a:hover {
 .copyright {
   color: var(--color-gray-200);
   font-size: 0.875rem;
+}
+
+/* Update hero CTA */
+#hero .button {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+#hero .button:hover {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* Update all other hover states to use new blue */
+.button:hover {
+  background: var(--color-accent);
+}
+
+header .button:hover,
+footer .button:hover {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
+
+header nav a:hover,
+footer nav a:hover,
+.brand:hover {
+  color: var(--color-accent);
+}
+
+#transition {
+  text-align: center;
+}
+
+#transition p {
+  margin: 1.5rem auto 0;
 }
