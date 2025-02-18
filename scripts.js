@@ -6,16 +6,6 @@ base.href = isGitHubPages ? '/alpyne/' : '/'
 const g = document.getElementById.bind(document)
 const q = document.querySelectorAll.bind(document)
 
-// Smooth scroll to demo section when clicking demo buttons
-q('.button').forEach((el) =>
-  el.addEventListener('click', (e) => {
-    window.scrollTo({
-      behavior: 'smooth',
-      top: g('preview').getBoundingClientRect().top + window.scrollY,
-    })
-  }),
-)
-
 // View switching
 const navButtons = document.querySelectorAll('.nav-button')
 const views = document.querySelectorAll('.view')
@@ -271,7 +261,7 @@ async function initEmptyViews() {
         </div>
         <div class="empty-state">
           <p>Book a full Alpyne demo to learn more about ${title}.</p>
-          <div class="button">Get a demo</div>
+          <a href="https://calendly.com/bryan-alpyne/30min" class="button" target="_blank">Get a demo</a>
         </div>
       `
     }

@@ -164,6 +164,7 @@ footer nav a:hover {
 }
 
 nav {
+  align-items: center;
   display: flex;
   gap: 2rem;
 }
@@ -181,6 +182,7 @@ section {
   display: inline-block;
   font-weight: 500;
   padding: 1rem 2rem;
+  text-decoration: none;
 }
 
 .button:hover {
@@ -341,8 +343,8 @@ footer nav a:hover {
 }
 
 .footer-content {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
   gap: 2rem;
 }
@@ -352,8 +354,8 @@ footer nav a:hover {
 }
 
 .footer-left {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 0.5rem;
 }
 
@@ -406,10 +408,8 @@ footer nav a:hover,
   overflow: hidden;
 }
 
-/* Navigation */
+/* App navigation */
 .app-nav {
-  background: var(--color-gray-50);
-  border-right: 1px solid var(--color-gray-200);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -783,4 +783,35 @@ footer nav a:hover,
   --ag-font-size: 14px;
   --ag-font-family: 'DM Sans', system-ui, sans-serif;
   width: 100%;
+}
+
+/* Header and footer shared styles */
+header .content,
+footer .content {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 0 2rem;
+  width: 100%;
+}
+
+header .content,
+.footer-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Navigation */
+nav {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Footer specific */
+.footer-left {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
 }
