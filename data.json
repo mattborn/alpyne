@@ -9,19 +9,89 @@
       "id": "1",
       "name": "Acme Corp",
       "industry": "Technology",
-      "status": "Active"
+      "connectionStatus": "connected",
+      "metrics": {
+        "cashBalance": 1243900
+      }
     },
     {
       "id": "2",
       "name": "Globex Inc",
       "industry": "Manufacturing",
-      "status": "Active"
+      "connectionStatus": "error",
+      "connectionMessage": "QuickBooks sync failed",
+      "metrics": {
+        "cashBalance": 892300
+      }
     },
     {
       "id": "3",
       "name": "Stark Industries",
       "industry": "Defense",
-      "status": "Active"
+      "connectionStatus": "connected",
+      "metrics": {
+        "cashBalance": 2845600
+      }
+    }
+  ],
+  "team": [
+    {
+      "name": "John Smith",
+      "role": "CFO",
+      "clients": ["Acme Corp", "Globex Inc"],
+      "lastActive": "2024-03-20"
+    },
+    {
+      "name": "Maria Garcia",
+      "role": "Controller",
+      "clients": ["Stark Industries"],
+      "lastActive": "2024-03-21"
+    },
+    {
+      "name": "David Chen",
+      "role": "Analyst",
+      "clients": ["Acme Corp", "Stark Industries"],
+      "lastActive": "2024-03-21"
+    }
+  ],
+  "sources": [
+    {
+      "name": "QuickBooks Online",
+      "type": "Accounting",
+      "clients": ["Acme Corp", "Globex Inc", "Stark Industries"],
+      "status": "Connected"
+    },
+    {
+      "name": "Stripe",
+      "type": "Payment",
+      "clients": ["Acme Corp", "Stark Industries"],
+      "status": "Connected"
+    },
+    {
+      "name": "Bill.com",
+      "type": "AP/AR",
+      "clients": ["Globex Inc"],
+      "status": "Error"
+    }
+  ],
+  "dashboards": [
+    {
+      "name": "Executive Summary",
+      "type": "Financial",
+      "clients": ["Acme Corp", "Globex Inc", "Stark Industries"],
+      "lastUpdated": "2024-03-21"
+    },
+    {
+      "name": "Cash Flow",
+      "type": "Financial",
+      "clients": ["Acme Corp", "Stark Industries"],
+      "lastUpdated": "2024-03-21"
+    },
+    {
+      "name": "Sales Analysis",
+      "type": "Operations",
+      "clients": ["Globex Inc"],
+      "lastUpdated": "2024-03-20"
     }
   ]
 }

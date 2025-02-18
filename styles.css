@@ -667,3 +667,97 @@ footer nav a:hover,
     grid-template-columns: 1fr;
   }
 }
+
+/* Portfolio view */
+#view-portfolio {
+  flex-direction: column;
+}
+
+.client-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.client-card {
+  background: var(--color-background);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-200);
+  flex: 1 1 15rem;
+  padding: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.client-card-header {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.client-card-header h3 {
+  flex: 1;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.error-icon {
+  color: #b42318;
+  font-size: 1rem;
+}
+
+/* Remove old status styles */
+.client-status {
+  display: none;
+}
+
+.client-metrics {
+  display: flex; /* Change from grid to flex since we only have one metric */
+}
+
+.metric {
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+}
+
+.metric-value {
+  color: var(--color-gray-900);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Data tables */
+.data-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.table-section {
+  width: 100%;
+}
+
+.table-section h3 {
+  margin-bottom: 1rem;
+}
+
+.ag-theme-alpine {
+  --ag-header-height: 48px;
+  --ag-row-height: 48px;
+  --ag-header-foreground-color: var(--color-gray-600);
+  --ag-foreground-color: var(--color-gray-900);
+  --ag-header-background-color: var(--color-gray-50);
+  --ag-odd-row-background-color: var(--color-gray-50);
+  --ag-row-hover-color: var(--color-gray-100);
+  --ag-selected-row-background-color: var(--color-gray-100);
+  --ag-font-size: 14px;
+  --ag-font-family: 'DM Sans', system-ui, sans-serif;
+  width: 100%;
+}

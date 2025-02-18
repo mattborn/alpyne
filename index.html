@@ -5,6 +5,9 @@
     <meta name="description" content="Stop wrangling client data. Automate it." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/styles/ag-grid.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/styles/ag-theme-alpine.css" />
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/dist/ag-grid-community.min.js"></script>
     <script defer src="https://kit.fontawesome.com/0bef9420dc.js" crossorigin="anonymous"></script>
     <script defer src="scripts.js"></script>
     <base id="base" href="/" />
@@ -107,10 +110,25 @@
 
               <main class="app-main">
                 <div class="view" id="view-portfolio">
-                  <div class="empty-state">
-                    <h2>Portfolio View</h2>
-                    <p>See how Alpyne helps you manage your entire client portfolio.</p>
-                    <div class="button">Get a demo</div>
+                  <div class="client-cards">
+                    <!-- Client cards will be rendered here -->
+                  </div>
+
+                  <div class="data-tables">
+                    <div class="table-section">
+                      <h3>Team</h3>
+                      <div id="teamGrid" class="ag-theme-alpine"></div>
+                    </div>
+
+                    <div class="table-section">
+                      <h3>Sources</h3>
+                      <div id="sourcesGrid" class="ag-theme-alpine"></div>
+                    </div>
+
+                    <div class="table-section">
+                      <h3>Dashboards</h3>
+                      <div id="dashboardsGrid" class="ag-theme-alpine"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="view" id="view-connections">
