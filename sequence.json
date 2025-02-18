@@ -3,32 +3,32 @@
     {
       "action": "hover",
       "target": "[data-view='portfolio']",
-      "duration": 100
+      "duration": 50
     },
     {
       "action": "hover",
       "target": "[data-view='client-select']",
-      "duration": 100
+      "duration": 50
     },
     {
       "action": "hover",
       "target": "[data-view='home']",
-      "duration": 100
+      "duration": 50
     },
     {
       "action": "hover",
       "target": "[data-view='reporting']",
-      "duration": 100
+      "duration": 50
     },
     {
       "action": "hover",
       "target": "[data-view='spreadsheets']",
-      "duration": 100
+      "duration": 50
     },
     {
       "action": "hover",
       "target": "[data-view='client-settings']",
-      "duration": 100
+      "duration": 75
     },
     {
       "action": "hover",
@@ -98,6 +98,41 @@
     {
       "action": "click",
       "target": "[data-view='connections']",
+      "duration": 1000
+    },
+    {
+      "action": "hover",
+      "target": ".connection-picker .button-small",
+      "duration": 600
+    },
+    {
+      "action": "click",
+      "target": ".connection-picker .button-small",
+      "duration": 1000
+    },
+    {
+      "action": "hover",
+      "target": ".connection-list .nav-button:first-child",
+      "duration": 600
+    },
+    {
+      "action": "click",
+      "target": ".connection-list .nav-button:first-child",
+      "duration": 1000
+    },
+    {
+      "action": "hover",
+      "target": ".button-secondary",
+      "duration": 600
+    },
+    {
+      "action": "hover",
+      "target": ".button-primary",
+      "duration": 600
+    },
+    {
+      "action": "click",
+      "target": ".button-primary",
       "duration": 2000
     },
     {

@@ -5,8 +5,6 @@
     <meta name="description" content="Stop wrangling client data. Automate it." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/styles/ag-grid.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/styles/ag-theme-alpine.css" />
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/dist/ag-grid-community.min.js"></script>
     <script defer src="https://kit.fontawesome.com/0bef9420dc.js" crossorigin="anonymous"></script>
     <script defer src="scripts.js"></script>
@@ -45,6 +43,10 @@
               <span></span>
             </div>
             <div class="browser-address">app.getalpyne.com</div>
+            <div id="play-button" class="browser-play hidden">
+              <i class="fa-solid fa-play"></i>
+              Play animation
+            </div>
           </div>
           <div class="browser-content">
             <div class="app">
@@ -100,7 +102,7 @@
                     <span>Firm Settings</span>
                   </button>
                   <button class="nav-button" data-view="profile">
-                    <img src="https://via.placeholder.com/24/eee" class="avatar" alt="" />
+                    <img src="https://placehold.co/24" class="avatar" alt="" />
                     <span class="fill"></span>
                   </button>
                 </div>
@@ -130,11 +132,26 @@
                   </div>
                 </div>
                 <div class="view" id="view-connections">
-                  <div class="empty-state">
+                  <div class="view-header-top">
                     <h2>Connections</h2>
-                    <p>Connect and manage all your client's data sources in one place.</p>
-                    <div class="button">Get a demo</div>
+                    <div class="connection-picker">
+                      <div class="button-small">
+                        <i class="fa-light fa-plus"></i>
+                        New Connection
+                      </div>
+                      <div class="connection-list">
+                        <div class="nav-button" data-value="quickbooks">QuickBooks Online</div>
+                        <div class="nav-button" data-value="xero">Xero</div>
+                        <div class="nav-button" data-value="bank">Bank Feed</div>
+                        <div class="nav-button" data-value="chargebee">Chargebee</div>
+                        <div class="nav-button" data-value="hubspot">HubSpot</div>
+                        <div class="nav-button" data-value="salesforce">Salesforce</div>
+                        <div class="nav-button" data-value="stripe">Stripe</div>
+                      </div>
+                    </div>
                   </div>
+                  <p>Manage your client data source connections</p>
+                  <div id="connectionsGrid" class="ag-theme-alpine"></div>
                 </div>
                 <div class="view" id="view-reporting">
                   <div class="empty-state">
@@ -190,6 +207,21 @@
                     <h2>Stark Industries Dashboard</h2>
                     <p>View financial metrics, reports, and insights for Stark Industries.</p>
                     <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div id="oauth-overlay" class="oauth-overlay">
+                  <div>
+                    <h3><span id="oauth-source-name"></span> would like to connect</h3>
+                    <p>This will allow Alpyne to:</p>
+                    <ul>
+                      <li>Access your account information</li>
+                      <li>Read financial data and transactions</li>
+                      <li>Sync data automatically</li>
+                    </ul>
+                    <div class="oauth-buttons">
+                      <div class="button-secondary" onclick="hideOAuthOverlay()">Cancel</div>
+                      <div class="button-primary" onclick="completeConnection()">Connect</div>
+                    </div>
                   </div>
                 </div>
               </main>

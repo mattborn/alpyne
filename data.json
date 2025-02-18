@@ -2,7 +2,7 @@
   "user": {
     "name": "Sofia Davis",
     "email": "sofia@example.com",
-    "avatar": "https://i.pravatar.cc/40?u=sofia"
+    "avatar": "https://i.pravatar.cc/24?u=sofia"
   },
   "clients": [
     {
@@ -95,10 +95,6 @@
     }
   ],
   "emptyViews": {
-    "view-connections": {
-      "title": "Connections",
-      "description": "Manage your integrations with accounting and payment systems."
-    },
     "view-reporting": {
       "title": "Reporting",
       "description": "Create and customize financial reports and dashboards."
@@ -135,5 +131,58 @@
       "title": "Stark Industries Dashboard",
       "description": "View and manage financial data and insights."
     }
-  }
+  },
+  "connections": [
+    {
+      "id": "quickbooks",
+      "name": "QuickBooks Online",
+      "type": "Accounting",
+      "showInTable": true,
+      "status": "Connected",
+      "lastSync": "2024-03-20T15:30:00Z",
+      "client": "Acme Corp"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "type": "Payments",
+      "showInTable": true,
+      "status": "Connected",
+      "lastSync": "2024-03-20T16:00:00Z",
+      "client": "Globex Inc"
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "type": "CRM",
+      "showInTable": true,
+      "status": "Error",
+      "lastSync": "2024-03-19T12:00:00Z",
+      "client": "Stark Industries"
+    },
+    {
+      "id": "xero",
+      "name": "Xero",
+      "type": "Accounting",
+      "showInTable": false
+    },
+    {
+      "id": "bank",
+      "name": "Bank Feed",
+      "type": "Banking",
+      "showInTable": false
+    },
+    {
+      "id": "chargebee",
+      "name": "Chargebee",
+      "type": "Billing",
+      "showInTable": false
+    },
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "type": "CRM",
+      "showInTable": false
+    }
+  ]
 }

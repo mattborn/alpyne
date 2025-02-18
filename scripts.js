@@ -100,7 +100,6 @@ function initGrids(data) {
   })
 
   const gridOptions = {
-    theme: 'legacy',
     defaultColDef: {
       sortable: true,
       filter: true,
@@ -171,12 +170,14 @@ function startSequence() {
   isPlaying = true
   currentStep = 0
   playNextStep()
+  document.getElementById('play-button').classList.add('hidden')
 }
 
 function stopSequence() {
   isPlaying = false
   clearTimeout(sequenceTimer)
   document.querySelectorAll('.nav-button').forEach((btn) => btn.classList.remove('hover'))
+  document.getElementById('play-button').classList.remove('hidden')
 }
 
 function playNextStep() {
@@ -222,7 +223,87 @@ document.head.appendChild(style)
 // Stop sequence when user interacts with app
 document.querySelector('.app').addEventListener('click', stopSequence)
 
-// Initialize app
+let selectedSource = null
+
+function showOAuthOverlay(source) {
+  selectedSource = source
+  document.getElementById('oauth-source-name').textContent = source.name
+  document.getElementById('oauth-overlay').style.display = 'flex'
+}
+
+function hideOAuthOverlay() {
+  document.getElementById('oauth-overlay').style.display = 'none'
+  selectedSource = null
+}
+
+function completeConnection() {
+  hideOAuthOverlay()
+}
+
+// Initialize connections grid
+function initConnectionsGrid(data) {
+  const element = document.getElementById('connectionsGrid')
+  if (!element) return
+
+  agGrid.createGrid(element, {
+    columnDefs: [
+      { field: 'name', headerName: 'Integration' },
+      { field: 'type', headerName: 'Type' },
+      { field: 'client', headerName: 'Client' },
+      { field: 'status', headerName: 'Status' },
+      {
+        field: 'lastSync',
+        headerName: 'Last Sync',
+        valueFormatter: (p) => (p.value ? new Date(p.value).toLocaleString() : 'Never'),
+      },
+    ],
+    rowData: data.connections.filter((c) => c.showInTable),
+    defaultColDef: {
+      sortable: true,
+      filter: true,
+    },
+    domLayout: 'autoHeight',
+  })
+}
+
+// Connection picker setup
+const connectionPicker = document.querySelector('.connection-picker')
+const connectionButton = connectionPicker.querySelector('.button-small')
+const connectionList = connectionPicker.querySelector('.connection-list')
+
+connectionButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  e.stopPropagation()
+  connectionPicker.classList.toggle('active')
+})
+
+document.addEventListener('click', () => {
+  connectionPicker.classList.remove('active')
+})
+
+// Populate connection list from data
+fetch('data.json')
+  .then((response) => response.json())
+  .then((data) => {
+    connectionList.innerHTML = data.connections
+      .map(
+        (source) => `
+    <div class="nav-button" data-source='${JSON.stringify(source)}'>${source.name}</div>
+  `,
+      )
+      .join('')
+
+    // Add click handlers after creating the elements
+    connectionList.querySelectorAll('.nav-button').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        const source = JSON.parse(button.dataset.source)
+        showOAuthOverlay(source)
+        connectionPicker.classList.remove('active')
+      })
+    })
+  })
+
+// Update initApp to initialize connections grid
 async function initApp() {
   const response = await fetch('data.json')
   const data = await response.json()
@@ -300,11 +381,15 @@ navButtons.forEach((button) => {
 
     const viewId = button.dataset.view === 'home' ? `view-client-${selectedClientId}` : `view-${button.dataset.view}`
 
+    // Fetch fresh data for views that need it
+    const response = await fetch('data.json')
+    const data = await response.json()
+
     if (viewId === 'view-portfolio') {
-      const response = await fetch('data.json')
-      const data = await response.json()
       renderClientCards(data.clients)
       initGrids(data)
+    } else if (viewId === 'view-connections') {
+      initConnectionsGrid(data)
     }
 
     navButtons.forEach((btn) => {
@@ -337,3 +422,6 @@ async function initEmptyViews() {
     }
   })
 }
+
+// Add play button click handler
+document.getElementById('play-button').addEventListener('click', startSequence)
