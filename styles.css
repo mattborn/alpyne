@@ -463,26 +463,22 @@ footer nav a:hover,
   font-weight: 500;
 }
 
-.nav-button i {
-  color: var(--color-gray-400);
-  font-size: 1.25rem;
-  width: 1.25rem;
+.nav-button .svg-inline--fa {
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
 }
 
-.nav-button:hover i,
-.nav-button.active i {
-  color: var(--color-gray-600);
+.fill {
+  flex: 1;
+  text-align: left;
 }
 
+/* User profile specific */
 .nav-button .avatar {
   border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
-}
-
-.nav-button .fill {
-  flex: 1;
-  text-align: left;
 }
 
 /* Client picker */
@@ -516,6 +512,7 @@ footer nav a:hover,
 
 /* Main content */
 .app-main {
+  background: var(--color-gray-100);
   display: flex;
   flex: 1;
   overflow-y: auto;
@@ -772,17 +769,31 @@ footer nav a:hover,
 }
 
 .ag-theme-alpine {
-  --ag-header-height: 48px;
-  --ag-row-height: 48px;
-  --ag-header-foreground-color: var(--color-gray-600);
-  --ag-foreground-color: var(--color-gray-900);
-  --ag-header-background-color: var(--color-gray-50);
-  --ag-odd-row-background-color: var(--color-gray-50);
-  --ag-row-hover-color: var(--color-gray-100);
-  --ag-selected-row-background-color: var(--color-gray-100);
-  --ag-font-size: 14px;
-  --ag-font-family: 'DM Sans', system-ui, sans-serif;
   width: 100%;
+}
+
+.ag-theme-alpine .ag-root-wrapper,
+.ag-theme-alpine .ag-header {
+  border: none;
+}
+
+.ag-header-icon {
+  display: none;
+}
+
+.ag-theme-alpine .ag-row-even,
+.ag-theme-alpine .ag-row-odd {
+  background: unset;
+}
+
+/* Update header styles */
+.ag-theme-alpine .ag-header {
+  background: var(--color-gray-200);
+}
+
+.ag-theme-alpine .ag-header-cell {
+  color: var(--color-text);
+  font-weight: 500;
 }
 
 /* Header and footer shared styles */

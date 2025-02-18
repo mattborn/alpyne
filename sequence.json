@@ -1,0 +1,116 @@
+{
+  "steps": [
+    {
+      "action": "hover",
+      "target": "[data-view='portfolio']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='client-select']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='home']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='reporting']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='spreadsheets']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='client-settings']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='firm-settings']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='profile']",
+      "duration": 500
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='firm-settings']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='client-settings']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='spreadsheets']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='reporting']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='connections']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='home']",
+      "duration": 100
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='client-select']",
+      "duration": 600
+    },
+    {
+      "action": "click",
+      "target": "[data-view='client-select']",
+      "duration": 2000
+    },
+    {
+      "action": "hover",
+      "target": ".client-list .nav-button:nth-child(2)",
+      "duration": 400
+    },
+    {
+      "action": "click",
+      "target": ".client-list .nav-button:nth-child(2)",
+      "duration": 1200
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='connections']",
+      "duration": 600
+    },
+    {
+      "action": "click",
+      "target": "[data-view='connections']",
+      "duration": 2000
+    },
+    {
+      "action": "hover",
+      "target": "[data-view='portfolio']",
+      "duration": 600
+    },
+    {
+      "action": "click",
+      "target": "[data-view='portfolio']",
+      "duration": 1000
+    }
+  ],
+  "autoStart": true,
+  "restartDelay": 3000
+}

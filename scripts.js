@@ -154,13 +154,86 @@ function initGrids(data) {
   })
 }
 
-// At the top of the file, after our base URL setup
-console.log('AG Grid available?', typeof agGrid !== 'undefined', agGrid)
+// Sequencer
+let sequence = null
+let currentStep = 0
+let sequenceTimer = null
+let isPlaying = false
+
+async function initSequence() {
+  const response = await fetch('sequence.json')
+  sequence = await response.json()
+  if (sequence.autoStart) startSequence()
+}
+
+function startSequence() {
+  if (isPlaying) return
+  isPlaying = true
+  currentStep = 0
+  playNextStep()
+}
+
+function stopSequence() {
+  isPlaying = false
+  clearTimeout(sequenceTimer)
+  document.querySelectorAll('.nav-button').forEach((btn) => btn.classList.remove('hover'))
+}
+
+function playNextStep() {
+  if (!isPlaying || !sequence) return
+
+  const step = sequence.steps[currentStep]
+  const target = document.querySelector(step.target)
+  if (!target) return
+
+  switch (step.action) {
+    case 'hover':
+      target.classList.add('hover')
+      sequenceTimer = setTimeout(() => {
+        target.classList.remove('hover')
+        currentStep = (currentStep + 1) % sequence.steps.length
+        playNextStep()
+      }, step.duration)
+      break
+
+    case 'click':
+      const originalClick = target.onclick
+      target.onclick = (e) => {
+        e.stopPropagation()
+        originalClick?.(e)
+      }
+      target.click()
+      target.onclick = originalClick
+      currentStep = (currentStep + 1) % sequence.steps.length
+      sequenceTimer = setTimeout(playNextStep, step.duration)
+      break
+  }
+}
+
+// Add hover style for sequencer
+const style = document.createElement('style')
+style.textContent = `
+  .nav-button.hover {
+    background: var(--color-gray-100);
+  }
+`
+document.head.appendChild(style)
+
+// Stop sequence when user interacts with app
+document.querySelector('.app').addEventListener('click', stopSequence)
 
 // Initialize app
 async function initApp() {
   const response = await fetch('data.json')
   const data = await response.json()
+
+  // Hydrate profile button with user data
+  const profileButton = document.querySelector('[data-view="profile"]')
+  const avatar = profileButton.querySelector('.avatar')
+  const name = profileButton.querySelector('.fill')
+  avatar.src = data.user.avatar
+  avatar.alt = data.user.name
+  name.textContent = data.user.name
 
   // Initialize portfolio view (default view)
   document.querySelector('[data-view="portfolio"]').classList.add('active')
@@ -203,7 +276,10 @@ async function initApp() {
 }
 
 // Start the app
-initApp().then(initEmptyViews)
+initApp().then(() => {
+  initEmptyViews()
+  initSequence()
+})
 
 // Toggle client picker - prevent view switching
 clientSelect.addEventListener('click', (e) => {
@@ -222,13 +298,9 @@ navButtons.forEach((button) => {
   button.addEventListener('click', async () => {
     if (button.closest('.client-picker')) return
 
-    const viewId =
-      button.dataset.view === 'home'
-        ? `view-client-${selectedClientId}` // Show current client's home view
-        : `view-${button.dataset.view}`
+    const viewId = button.dataset.view === 'home' ? `view-client-${selectedClientId}` : `view-${button.dataset.view}`
 
     if (viewId === 'view-portfolio') {
-      // Refresh portfolio data without reinitializing client picker
       const response = await fetch('data.json')
       const data = await response.json()
       renderClientCards(data.clients)
@@ -236,9 +308,7 @@ navButtons.forEach((button) => {
     }
 
     navButtons.forEach((btn) => {
-      if (!btn.closest('.client-picker')) {
-        btn.classList.remove('active')
-      }
+      if (!btn.closest('.client-picker')) btn.classList.remove('active')
     })
     button.classList.add('active')
     showView(viewId)
