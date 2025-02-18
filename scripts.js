@@ -213,7 +213,7 @@ async function initApp() {
 }
 
 // Start the app
-initApp()
+initApp().then(initEmptyViews)
 
 // Toggle client picker - prevent view switching
 clientSelect.addEventListener('click', (e) => {
@@ -254,3 +254,26 @@ navButtons.forEach((button) => {
     showView(viewId)
   })
 })
+
+// Create empty state views
+async function initEmptyViews() {
+  const response = await fetch('data.json')
+  const { emptyViews } = await response.json()
+
+  // Initialize all empty views including user profile and client dashboards
+  Object.entries(emptyViews).forEach(([viewId, { title, description }]) => {
+    const view = document.getElementById(viewId)
+    if (view) {
+      view.innerHTML = `
+        <div class="view-header">
+          <h2>${title}</h2>
+          <p>${description}</p>
+        </div>
+        <div class="empty-state">
+          <p>Book a full Alpyne demo to learn more about ${title}.</p>
+          <div class="button">Get a demo</div>
+        </div>
+      `
+    }
+  })
+}

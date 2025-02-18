@@ -93,5 +93,47 @@
       "clients": ["Globex Inc"],
       "lastUpdated": "2024-03-20"
     }
-  ]
+  ],
+  "emptyViews": {
+    "view-connections": {
+      "title": "Connections",
+      "description": "Manage your integrations with accounting and payment systems."
+    },
+    "view-reporting": {
+      "title": "Reporting",
+      "description": "Create and customize financial reports and dashboards."
+    },
+    "view-spreadsheets": {
+      "title": "Spreadsheets",
+      "description": "Access and manage client spreadsheets and workbooks."
+    },
+    "view-firm-settings": {
+      "title": "Firm Settings",
+      "description": "Configure firm-wide settings and preferences."
+    },
+    "view-profile": {
+      "title": "User Profile",
+      "description": "Manage your account settings and preferences."
+    },
+    "view-client-settings": {
+      "title": "Client Settings",
+      "description": "Configure client-specific settings and preferences."
+    },
+    "view-notifications": {
+      "title": "Notifications",
+      "description": "View and manage your notification settings."
+    },
+    "view-client-1": {
+      "title": "Acme Corp Dashboard",
+      "description": "View and manage financial data and insights."
+    },
+    "view-client-2": {
+      "title": "Globex Inc Dashboard",
+      "description": "View and manage financial data and insights."
+    },
+    "view-client-3": {
+      "title": "Stark Industries Dashboard",
+      "description": "View and manage financial data and insights."
+    }
+  }
 }
