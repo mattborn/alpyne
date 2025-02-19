@@ -1,8 +1,16 @@
-/* Header and hero use primary color */
+/* Header */
 .migrate header,
 .migrate #hero {
   background: var(--color-primary);
   color: var(--color-background);
+}
+
+#hero .content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
 }
 
 /* Button styles */

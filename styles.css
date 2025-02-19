@@ -5,9 +5,25 @@ body {
   background-size: auto 120vh;
 }
 
-/* Invert text for hero header */
+/* Header */
 header,
 #hero {
+  color: var(--color-background);
+}
+
+header nav a {
+  color: var(--color-background);
+}
+
+header nav a:hover,
+footer nav a:hover,
+.brand:hover {
+  color: var(--color-primary);
+}
+
+header .button:hover,
+footer .button:hover {
+  background: var(--color-primary);
   color: var(--color-background);
 }
 
@@ -263,18 +279,6 @@ cite {
 
 .button:hover {
   background: var(--color-primary);
-}
-
-header .button:hover,
-footer .button:hover {
-  background: var(--color-primary);
-  color: var(--color-background);
-}
-
-header nav a:hover,
-footer nav a:hover,
-.brand:hover {
-  color: var(--color-primary);
 }
 
 /* App */

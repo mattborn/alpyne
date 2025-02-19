@@ -1,0 +1,46 @@
+.content { position: relative; }
+
+#hero .content {
+  align-items: center;
+  display: flex;
+}
+
+h1 {
+  margin-right: -15%;
+  z-index: 1;
+}
+
+#hero img {
+  width: 60%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  #hero .content {
+    flex-direction: column;
+  }
+  
+  #hero h1 {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  #hero img {
+    width: 100%;
+  }
+}
+
+#story .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 20%;
+}
+
+
+@media (max-width: 768px) {
+  #story .content {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
+}
