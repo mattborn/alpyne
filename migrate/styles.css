@@ -1,8 +1,43 @@
+/* Overlay */
+.overlay {
+  background: var(--color-primary);
+  inset: 0;
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
 /* Header */
 .migrate header,
 .migrate #hero {
-  background: var(--color-primary);
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url('https://res.cloudinary.com/dlb7hetnl/image/upload/v1739999732/Alpyne/migrate-bg-feb19_bcjpct.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Ensure content stays above the background */
+.migrate header .content,
+.migrate #hero .content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.migrate header .content {
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .alpyne-logo path {
