@@ -79,11 +79,15 @@
 }
 
 /* Platforms Section */
+#platforms {
+  text-align: center;
+}
+
 .platform-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin: 3rem 0 0;
+  margin: 3rem auto 0;
   padding: 0;
   list-style: none;
 }
@@ -94,6 +98,19 @@
   background: var(--color-text-05);
   border-radius: 1rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.platform-list img {
+  height: 150px;
+  width: 300px;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 /* CTA Section */
@@ -113,6 +130,18 @@
   #who-needs .content,
   #problem .text-columns,
   #solution .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .platform-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .platform-list {
     grid-template-columns: 1fr;
   }
 }
