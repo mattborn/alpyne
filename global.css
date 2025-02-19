@@ -114,6 +114,21 @@ small {
   color: var(--color-primary);
 }
 
+/* Logo */
+.alpyne-logo {
+  height: 3rem;
+  margin-left: -0.5rem;
+  width: 7.5rem;
+}
+
+.alpyne-logo path {
+  fill: currentColor;
+}
+
+.alpyne-logo path:first-child {
+  fill: var(--color-primary);
+}
+
 /* Layout */
 section {
   padding: 6rem 0;

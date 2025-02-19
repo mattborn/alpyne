@@ -5,6 +5,13 @@
   color: var(--color-background);
 }
 
+.alpyne-logo path {
+  fill: #fff9;
+}
+.alpyne-logo path:first-child {
+  fill: currentColor;
+}
+
 #hero .content {
   align-items: center;
   display: flex;
