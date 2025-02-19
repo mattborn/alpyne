@@ -1,0 +1,103 @@
+/* Header and hero use primary color */
+.migrate header,
+.migrate #hero {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* Button styles */
+.migrate .button {
+  background: var(--color-text);
+  color: var(--color-background);
+}
+
+.migrate header .button,
+.migrate #hero .button {
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.migrate .button:hover {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* Who Needs Section - match Focal layout */
+#who-needs .content {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 3fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+#who-needs .list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+#who-needs p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-text-10);
+}
+
+/* Problem Section */
+#problem .text-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+/* Solution Section */
+#solution .features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 2rem;
+  margin-top: 3rem;
+}
+
+#solution .feature h3 {
+  margin-bottom: 1rem;
+}
+
+/* Platforms Section */
+.platform-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.platform-list li {
+  font-size: 1.25rem;
+  padding: 2rem;
+  background: var(--color-text-05);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+/* CTA Section */
+#cta {
+  text-align: center;
+}
+
+#cta .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #who-needs .content,
+  #problem .text-columns,
+  #solution .features {
+    grid-template-columns: 1fr;
+  }
+}
