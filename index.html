@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/dist/ag-grid-community.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script defer src="https://kit.fontawesome.com/0bef9420dc.js" crossorigin="anonymous"></script>
     <script defer src="scripts.js"></script>
     <base id="base" href="/" />
@@ -58,7 +59,7 @@
                 <div class="nav-section">
                   <span class="nav-label">General</span>
                   <button class="nav-button active" data-view="portfolio">
-                    <i class="fa-light fa-briefcase"></i>
+                    <i class="fa-regular fa-briefcase"></i>
                     <span>Portfolio</span>
                   </button>
                 </div>
@@ -67,29 +68,29 @@
                   <span class="nav-label">Clients</span>
                   <div class="client-picker">
                     <button class="nav-button" data-view="client-select">
-                      <i class="fa-light fa-building"></i>
+                      <i class="fa-regular fa-building"></i>
                       <span class="fill">Acme Corp</span>
-                      <i class="fa-light fa-angle-down"></i>
+                      <i class="fa-regular fa-angle-down"></i>
                     </button>
                   </div>
                   <button class="nav-button" data-view="home">
-                    <i class="fa-light fa-house"></i>
+                    <i class="fa-regular fa-house"></i>
                     <span>Home</span>
                   </button>
                   <button class="nav-button" data-view="connections">
-                    <i class="fa-light fa-plug"></i>
+                    <i class="fa-regular fa-plug"></i>
                     <span>Connections</span>
                   </button>
                   <button class="nav-button" data-view="reporting">
-                    <i class="fa-light fa-chart-mixed"></i>
+                    <i class="fa-regular fa-chart-mixed"></i>
                     <span>Reporting</span>
                   </button>
                   <button class="nav-button" data-view="spreadsheets">
-                    <i class="fa-light fa-table"></i>
+                    <i class="fa-regular fa-table"></i>
                     <span>Spreadsheets</span>
                   </button>
                   <button class="nav-button" data-view="client-settings">
-                    <i class="fa-light fa-gear"></i>
+                    <i class="fa-regular fa-gear"></i>
                     <span>Client Settings</span>
                   </button>
                 </div>
@@ -98,7 +99,7 @@
 
                 <div class="nav-section">
                   <button class="nav-button" data-view="firm-settings">
-                    <i class="fa-light fa-building"></i>
+                    <i class="fa-regular fa-building"></i>
                     <span>Firm Settings</span>
                   </button>
                   <button class="nav-button" data-view="profile">
@@ -136,7 +137,7 @@
                     <h2>Connections</h2>
                     <div class="connection-picker">
                       <div class="button-small">
-                        <i class="fa-light fa-plus"></i>
+                        <i class="fa-regular fa-plus"></i>
                         New Connection
                       </div>
                       <div class="connection-list">
@@ -234,7 +235,7 @@
     <section id="quote">
       <div class="content">
         <blockquote>
-          <p>
+          <p class="bigger-copy">
             "Before Alpyne, we struggled to consistently turn scattered financial data into a clear, compelling story
             for our clients. With Alypne, we can easily integrate data from multiple client sources, and create instant
             insights and reports, equipping us with answers before questions even arise. No more manually piecing
@@ -248,41 +249,41 @@
 
     <section id="pain-points">
       <div class="content">
-        <h2>As a Fractional CFO, the mental load of your work starts before you even open your laptop.</h2>
-        <div class="cards">
-          <div class="card">
+        <h2>As a Fractional CFO, the mental load of your work starts <mark>before you even open your laptop.</mark></h2>
+        <div class="pain-points">
+          <div class="pain-point">
             <h3>Scattered Data</h3>
             <p>
               Each client uses different tools--accounting, CRM, billing--none of which connect seamlessly. You waste
               hours logging in, exporting reports, and chasing missing data.
             </p>
           </div>
-          <div class="card">
+          <div class="pain-point">
             <h3>Standardizing Data</h3>
             <p>
               Nothing matches. Different formats and structures force you to manually clean, reconcile and reformat
               before anything is usable.
             </p>
           </div>
-          <div class="card">
+          <div class="pain-point">
             <h3>Immediately Outdated Reports</h3>
             <p>By time reports are done, they're already stale. Any updates force you to restart from scratch.</p>
           </div>
-          <div class="card">
+          <div class="pain-point">
             <h3>Frustrating Collaboration</h3>
             <p>
               Sharing insights means emailing spreadsheets & scheduling calls. Clients want real-time access to their
               financials.
             </p>
           </div>
-          <div class="card">
+          <div class="pain-point">
             <h3>Inefficient Scaling</h3>
             <p>
               Adding more clients only makes things harder. This manual process doesn't scale and eats into your time
               and profitability.
             </p>
           </div>
-          <div class="card">
+          <div class="pain-point">
             <h3>Stuck in Busywork</h3>
             <p>Instead of advising clients, you're buried in data entry, reconciliations, and report formatting.</p>
           </div>
@@ -292,39 +293,53 @@
 
     <section id="transition">
       <div class="content">
-        <h2>These problems don't have to define your day.</h2>
-        <p>
+        <i class="fa-solid fa-mountain-sun"></i>
+        <h2>These problems <mark>don't have to define your day.</mark></h2>
+        <p class="lede">
           Alpyne is designed to automate the manual work, unify your clients' systems, and give you total control over
           financial data and workflows.
         </p>
       </div>
     </section>
 
-    <section class="feature">
+    <section class="value-prop">
       <div class="content">
         <div class="text">
+          <small>Clients</small>
           <h2>Command Center for all your Clients</h2>
-          <p>Easily switch between clients...</p>
+          <p class="bigger-copy">
+            Easily switch between clients. Manage all their data from one centralized hub. No more juggling multiple
+            logins or switching between platforms—everything you need is in one place.
+          </p>
         </div>
-        <div class="graphic"></div>
+        <img
+          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739941411/Alpyne/command-center-540_2x_jyumzk.png"
+          alt="Command center interface showing client portfolio"
+          class="graphic"
+        />
       </div>
     </section>
 
-    <section class="feature alt">
+    <section class="value-prop alt">
       <div class="content">
         <div class="graphic"></div>
         <div class="text">
+          <small>Data</small>
           <h2>Automated Data Standardization</h2>
-          <p>Alpyne pulls financial data...</p>
+          <p class="bigger-copy">
+            Alpyne pulls financial data from accounting, CRM, and billing systems and automatically standardizes it to a
+            consistent format. Skip the hours of manual cleanup and reconciliation—your data is ready to use instantly.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="feature">
+    <section class="value-prop">
       <div class="content">
         <div class="text">
+          <small>Mapping</small>
           <h2>Financial Power-House</h2>
-          <p>
+          <p class="bigger-copy">
             Alpyne doesn't just aggregate and standardize your clients' financial data—it empowers you to create and
             customize financial statements, perform multi-entity consolidations, and remap chart of accounts without
             altering client systems. Whether you're building GAAP-aligned statements or grouping accounts for budgeting
@@ -335,12 +350,13 @@
       </div>
     </section>
 
-    <section class="feature alt">
+    <section class="value-prop alt">
       <div class="content">
         <div class="graphic"></div>
         <div class="text">
+          <small>Reports</small>
           <h2>Real-Time Dashboards and Reporting</h2>
-          <p>
+          <p class="bigger-copy">
             Replace manually created, static reports with real-time dashboards that update automatically as your
             clients' systems sync.
           </p>
@@ -348,26 +364,31 @@
       </div>
     </section>
 
-    <section class="feature">
+    <section class="value-prop">
       <div class="content">
         <div class="text">
+          <small>Spreadsheets</small>
           <h2>Seamless Google Sheets Integration</h2>
-          <p>
+          <p class="bigger-copy">
             Some things are just better in spreadsheets. Sync financial data directly into Google Sheets for live
             forecasting, modeling, and reporting. No exporting, importing, or outdated spreadsheets—your numbers are
             always up to date.
           </p>
         </div>
-        <div class="graphic"></div>
+        <div class="graphic" id="google-sheets">
+          <i class="fa-solid fa-file-spreadsheet"></i>
+          <i class="fa-solid fa-file-excel"></i>
+        </div>
       </div>
     </section>
 
-    <section class="feature alt">
+    <section class="value-prop alt">
       <div class="content">
         <div class="graphic"></div>
         <div class="text">
+          <small>Collaboration</small>
           <h2>Collaborate Across Your Entire Financial Team</h2>
-          <p>
+          <p class="bigger-copy">
             Alpyne lets you collaborate effortlessly with your clients' teams—bookkeepers, accountants, analysts, and
             executives—all from one central hub. Assign roles, share live reports, and keep everyone aligned with
             real-time data.
@@ -381,24 +402,29 @@
         <h2>How It Works</h2>
         <div class="steps">
           <div class="step">
+            <i class="fa-solid fa-square-1"></i>
             <h3>Add Your Clients</h3>
-            <p>Manage multiple clients with ease by adding them to Alpyne.</p>
+            <p class="bigger-copy">Manage multiple clients with ease by adding them to Alpyne.</p>
           </div>
           <div class="step">
+            <i class="fa-solid fa-square-2"></i>
             <h3>Connect Their Systems</h3>
-            <p>Integrate QuickBooks, Stripe, Salesforce, and more with just a few clicks.</p>
+            <p class="bigger-copy">Integrate QuickBooks, Stripe, Salesforce, and more with just a few clicks.</p>
           </div>
           <div class="step">
+            <i class="fa-solid fa-square-3"></i>
             <h3>Automate Data Standardization</h3>
-            <p>Alpyne organizes and formats your clients' data instantly.</p>
+            <p class="bigger-copy">Alpyne organizes and formats your clients' data instantly.</p>
           </div>
           <div class="step">
+            <i class="fa-solid fa-square-4"></i>
             <h3>Build Reports &amp; Dashboards</h3>
-            <p>Create and share real-time financial insights tailored to each client.</p>
+            <p class="bigger-copy">Create and share real-time financial insights tailored to each client.</p>
           </div>
           <div class="step">
+            <i class="fa-solid fa-square-5"></i>
             <h3>Collaborate Seamlessly</h3>
-            <p>Work with your team and clients in one central, live workspace.</p>
+            <p class="bigger-copy">Work with your team and clients in one central, live workspace.</p>
           </div>
         </div>
       </div>
@@ -406,19 +432,17 @@
 
     <footer>
       <div class="content">
-        <div class="footer-content">
-          <div class="footer-left">
-            <a href="" class="brand">Alpyne</a>
-            <span class="copyright">© 2025</span>
-            <span class="copyright">Proudly built in Utah</span>
-          </div>
-          <nav>
-            <a href="about">About</a>
-            <a href="migrate">Migrate</a>
-            <a href="https://app.getalpyne.com">Log in</a>
-            <a href="https://calendly.com/bryan-alpyne/30min" class="button" target="_blank">Get a demo</a>
-          </nav>
+        <div id="footer-brand">
+          <a href="" class="brand">Alpyne</a>
+          <span class="copyright">© 2025</span>
+          <span class="copyright">Proudly built in Utah</span>
         </div>
+        <nav>
+          <a href="about">About</a>
+          <a href="migrate">Migrate</a>
+          <a href="https://app.getalpyne.com">Log in</a>
+          <a href="https://calendly.com/bryan-alpyne/30min" class="button" target="_blank">Get a demo</a>
+        </nav>
       </div>
     </footer>
   </body>

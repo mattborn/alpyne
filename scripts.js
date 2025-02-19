@@ -425,3 +425,10 @@ async function initEmptyViews() {
 
 // Add play button click handler
 document.getElementById('play-button').addEventListener('click', startSequence)
+
+// Initialize ScrollReveal
+ScrollReveal().reveal('h1,.lede,.button,.browser,.pain-point,.step,.value-prop', {
+  distance: '10%',
+  origin: 'bottom',
+  interval: 100,
+})
