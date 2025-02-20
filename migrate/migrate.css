@@ -180,3 +180,55 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Comparison table */
+#comparison {
+  background: var(--color-gray-100);
+}
+
+#comparison h2 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#comparison th {
+  background: var(--color-text);
+  color: white;
+  font-weight: 500;
+  text-align: left;
+  padding: 1.5rem;
+}
+
+#comparison th:first-child {
+  width: 25%;
+}
+
+#comparison td {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+#comparison tr:last-child td {
+  border-bottom: none;
+}
+
+#comparison .label {
+  font-weight: 500;
+  color: var(--color-deep-blue);
+}
+
+@media (max-width: 768px) {
+  #comparison td,
+  #comparison th {
+    padding: 1rem;
+  }
+}

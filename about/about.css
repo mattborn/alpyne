@@ -1,4 +1,6 @@
-.content { position: relative; }
+.content {
+  position: relative;
+}
 
 #hero .content {
   align-items: center;
@@ -11,6 +13,7 @@ h1 {
 }
 
 #hero img {
+  border-radius: 1rem;
   width: 60%;
 }
 
@@ -19,12 +22,12 @@ h1 {
   #hero .content {
     flex-direction: column;
   }
-  
+
   #hero h1 {
     margin-right: 0;
     margin-bottom: 2rem;
   }
-  
+
   #hero img {
     width: 100%;
   }
@@ -36,7 +39,6 @@ h1 {
   gap: 2rem;
   padding: 0 20%;
 }
-
 
 @media (max-width: 768px) {
   #story .content {

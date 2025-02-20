@@ -2,7 +2,14 @@ body {
   background-image: url('https://res.cloudinary.com/dlb7hetnl/image/upload/v1739940192/Alpyne/alpyne-bg-1_cy6usf.png');
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: auto 120vh;
+  background-size: auto min(120vh, 960px);
+}
+
+@media (min-width: 1456px) and (min-aspect-ratio: 16/9) {
+  body {
+    background-position: top center;
+    background-size: 100% auto;
+  }
 }
 
 /* Header */
@@ -397,19 +404,21 @@ cite {
   background: var(--color-gray-100);
   display: flex;
   flex: 1;
+  font-size: 14px;
+  font-weight: 500;
   overflow-y: auto;
 }
 
 .view {
   display: none;
   flex: 1;
+  gap: 1rem;
   padding: 1.5rem;
+  flex-direction: column;
 }
 
 .view.active {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 /* View header */
@@ -426,11 +435,10 @@ cite {
   align-items: center;
 }
 
-.view-header h2 {
-  color: var(--color-gray-900);
+.view-title {
   font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .view-header p {
@@ -441,14 +449,14 @@ cite {
 
 /* Empty state */
 .empty-state {
-  background: var(--color-gray-50);
+  align-items: center;
+  background: var(--color-background);
   border-radius: 1rem;
   display: flex;
-  flex: 1;
   flex-direction: column;
+  flex: 1;
   gap: 1.5rem;
   justify-content: center;
-  align-items: center;
   padding: 3rem;
   text-align: center;
 }
@@ -459,7 +467,6 @@ cite {
 
 .empty-state-message {
   color: var(--color-gray-600);
-  font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 
@@ -518,7 +525,6 @@ cite {
 
 .metric {
   color: var(--color-gray-600);
-  font-size: 0.875rem;
 }
 
 .metric-value {
@@ -569,6 +575,84 @@ cite {
 .ag-theme-alpine .ag-header-cell {
   color: var(--color-text);
   font-weight: 500;
+}
+
+/* Dashboards */
+.dashboard-nav {
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tabs a {
+  color: var(--color-gray-600);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs a.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.stat-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.stat-card {
+  background: var(--color-background);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.stat-label {
+  color: var(--color-gray-600);
+}
+
+.stat-value {
+  font-size: 2rem;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.chart-card {
+  background: var(--color-background);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.chart {
+  max-height: 300px;
 }
 
 /* Connections */
@@ -632,7 +716,6 @@ cite {
 
 .connection-menu .menu-group {
   color: var(--color-gray-600);
-  font-size: 0.75rem;
   padding: 0.5rem;
   text-transform: uppercase;
 }
@@ -645,7 +728,6 @@ cite {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
   padding: 0.5rem 0.75rem;
 }
 
@@ -653,19 +735,19 @@ cite {
   opacity: 0.9;
 }
 
-/* OAuth overlay styles */
-.oauth-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: none;
+/* OAuth overlay */
+#oauth-overlay {
   align-items: center;
+  background: var(--color-background);
+  bottom: 0;
+  display: none;
+  height: 100%;
   justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
   z-index: 100;
 }
 
@@ -695,20 +777,13 @@ cite {
 
 .button-primary {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-background);
   border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
   cursor: pointer;
 }
 
-/* Constrain overlay to app preview */
-.app {
-  position: relative;
-}
-
-#oauth-overlay {
-  position: absolute;
-}
+/* Play button */
 
 .browser-play {
   color: var(--color-background);
@@ -719,7 +794,6 @@ cite {
   gap: 0.5rem;
   background: var(--color-text);
   border-radius: 0.5rem;
-  font-size: 0.875rem;
 }
 
 .browser-play:hover {
@@ -728,13 +802,4 @@ cite {
 
 .hidden {
   display: none;
-}
-
-.command-center {
-  background-image: url('https://res.cloudinary.com/dlb7hetnl/image/upload/v1739940192/Alpyne/feb18-command_cpznfu.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
 }

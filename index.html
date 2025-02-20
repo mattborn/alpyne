@@ -4,11 +4,21 @@
     <title>Alpyne</title>
     <meta name="description" content="Stop wrangling client data. Automate it." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Alpyne" />
+    <meta property="og:description" content="Stop wrangling client data. Automate it." />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dlb7hetnl/image/upload/v1740081705/Alpyne/alpyne-link-preview-feb20_fmiujb.png"
+    />
+    <meta property="og:url" content="https://getalpyne.com" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.1.0/dist/ag-grid-community.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.7"></script>
     <script defer src="https://kit.fontawesome.com/0bef9420dc.js" crossorigin="anonymous"></script>
+    <script defer src="global.js"></script>
     <script defer src="scripts.js"></script>
     <base id="base" href="/" />
   </head>
@@ -47,7 +57,7 @@
       <div class="content">
         <h1>Stop wrangling client data. Automate it.</h1>
         <p class="lede">
-          Alpyne brings all your clients’ systems into one seamless platform, just the way you want it--so you can save
+          Alpyne brings all your clients' systems into one seamless platform, just the way you want it--so you can save
           hours, cut costs and scale your practice. Built for Fractional CFOs, by a CFO.
         </p>
         <a href="https://calendly.com/bryan-alpyne/30min" class="button" target="_blank">Get a demo</a>
@@ -148,9 +158,7 @@
 
               <main class="app-main">
                 <div class="view" id="view-portfolio">
-                  <div class="client-cards">
-                    <!-- Client cards will be rendered here -->
-                  </div>
+                  <div class="client-cards"></div>
 
                   <div class="data-tables">
                     <div class="table-section">
@@ -171,7 +179,7 @@
                 </div>
                 <div class="view" id="view-connections">
                   <div class="view-header-top">
-                    <h2>Connections</h2>
+                    <div class="view-title">Connections</div>
                     <div class="connection-picker">
                       <div class="button-small">
                         <i class="fa-regular fa-plus"></i>
@@ -193,61 +201,105 @@
                 </div>
                 <div class="view" id="view-reporting">
                   <div class="empty-state">
-                    <h2>Reporting</h2>
+                    <div class="view-title">Reporting</div>
                     <p>Create custom reports and dashboards with real-time data from all your connected systems.</p>
                     <div class="button">Get a demo</div>
                   </div>
                 </div>
                 <div class="view" id="view-spreadsheets">
                   <div class="empty-state">
-                    <h2>Spreadsheets</h2>
+                    <div class="view-title">Spreadsheets</div>
                     <p>Sync your financial data directly with Google Sheets for live forecasting and modeling.</p>
                     <div class="button">Get a demo</div>
                   </div>
                 </div>
                 <div class="view" id="view-client-settings">
                   <div class="empty-state">
-                    <h2>Client Settings</h2>
+                    <div class="view-title">Client Settings</div>
                     <p>Configure client-specific settings, permissions, and integrations.</p>
                     <div class="button">Get a demo</div>
                   </div>
                 </div>
                 <div class="view" id="view-firm-settings">
                   <div class="empty-state">
-                    <h2>Firm Settings</h2>
+                    <div class="view-title">Firm Settings</div>
                     <p>Manage your firm's global settings, team members, and billing.</p>
                     <div class="button">Get a demo</div>
                   </div>
                 </div>
                 <div class="view" id="view-profile">
                   <div class="empty-state">
-                    <h2>User Profile</h2>
+                    <div class="view-title">User Profile</div>
                     <p>Manage your personal settings, notifications, and preferences.</p>
                     <div class="button">Get a demo</div>
                   </div>
                 </div>
                 <div class="view" id="view-client-1">
-                  <div class="empty-state">
-                    <h2>Acme Corp Dashboard</h2>
-                    <p>View financial metrics, reports, and insights for Acme Corp.</p>
-                    <div class="button">Get a demo</div>
+                  <div class="view-header-top">
+                    <div class="view-title">Acme Corp Dashboard</div>
                   </div>
                 </div>
                 <div class="view" id="view-client-2">
-                  <div class="empty-state">
-                    <h2>Globex Inc Dashboard</h2>
-                    <p>View financial metrics, reports, and insights for Globex Inc.</p>
-                    <div class="button">Get a demo</div>
+                  <div class="view-header-top">
+                    <div class="view-title">Globex Inc Dashboard</div>
+                  </div>
+
+                  <div class="dashboard-nav">
+                    <div class="tabs">
+                      <a href="#">Growth</a>
+                      <a href="#">Retention</a>
+                      <a href="#" class="active">Econ + Efficiency</a>
+                      <a href="#">Income Statement</a>
+                      <a href="#">2025 Budget</a>
+                      <a href="#">Forecast</a>
+                      <a href="#">Balance Sheet</a>
+                    </div>
+                  </div>
+
+                  <div class="date-filter">
+                    <span>Date Filter</span>
+                    <div class="date-button">
+                      January 1, 2024 - October 31, 2024
+                      <i class="fa-regular fa-angle-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="stat-cards">
+                    <div class="stat-card">
+                      <div class="stat-label">CAC</div>
+                      <div class="stat-value">110.5k</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">LTV</div>
+                      <div class="stat-value">550.0k</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">LTV/CAC</div>
+                      <div class="stat-value">4.27</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">CAC Payback (mos)</div>
+                      <div class="stat-value">13.1</div>
+                    </div>
+                  </div>
+
+                  <div class="chart-grid">
+                    <div class="chart-card">
+                      <b>Gross Margin by Month</b>
+                      <canvas class="chart" id="grossMarginChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                      <b>EBITDA by Month</b>
+                      <canvas class="chart" id="ebitdaChart"></canvas>
+                    </div>
                   </div>
                 </div>
                 <div class="view" id="view-client-3">
-                  <div class="empty-state">
-                    <h2>Stark Industries Dashboard</h2>
-                    <p>View financial metrics, reports, and insights for Stark Industries.</p>
-                    <div class="button">Get a demo</div>
+                  <div class="view-header-top">
+                    <div class="view-title">Stark Industries Dashboard</div>
                   </div>
                 </div>
-                <div id="oauth-overlay" class="oauth-overlay">
+                <div id="oauth-overlay">
                   <div>
                     <h3><span id="oauth-source-name"></span> would like to connect</h3>
                     <p>This will allow Alpyne to:</p>

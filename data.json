@@ -118,18 +118,6 @@
     "view-notifications": {
       "title": "Notifications",
       "description": "View and manage your notification settings."
-    },
-    "view-client-1": {
-      "title": "Acme Corp Dashboard",
-      "description": "View and manage financial data and insights."
-    },
-    "view-client-2": {
-      "title": "Globex Inc Dashboard",
-      "description": "View and manage financial data and insights."
-    },
-    "view-client-3": {
-      "title": "Stark Industries Dashboard",
-      "description": "View and manage financial data and insights."
     }
   },
   "connections": [

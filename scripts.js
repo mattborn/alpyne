@@ -1,8 +1,3 @@
-// Set base URL depending on environment
-const base = document.getElementById('base')
-const isGitHubPages = window.location.hostname.includes('github.io') || window.location.hostname === 'mattborn.com'
-base.href = isGitHubPages ? '/alpyne/' : '/'
-
 const g = document.getElementById.bind(document)
 const q = document.querySelectorAll.bind(document)
 
@@ -360,6 +355,7 @@ async function initApp() {
 initApp().then(() => {
   initEmptyViews()
   initSequence()
+  initGlobexCharts()
 })
 
 // Toggle client picker - prevent view switching
@@ -390,6 +386,8 @@ navButtons.forEach((button) => {
       initGrids(data)
     } else if (viewId === 'view-connections') {
       initConnectionsGrid(data)
+    } else if (viewId === 'view-client-2') {
+      initGlobexCharts()
     }
 
     navButtons.forEach((btn) => {
@@ -428,7 +426,86 @@ document.getElementById('play-button').addEventListener('click', startSequence)
 
 // Initialize ScrollReveal
 ScrollReveal().reveal('h1,.lede,.button,.browser,.pain-point,.step,.value-prop', {
+  cleanup: true,
   distance: '10%',
-  origin: 'bottom',
   interval: 100,
+  origin: 'bottom',
 })
+
+// Store chart instances
+let charts = {}
+
+function initGlobexCharts() {
+  // Destroy existing charts if they exist
+  Object.values(charts).forEach((chart) => chart.destroy())
+
+  // Gross Margin Chart
+  charts.grossMargin = new Chart(document.getElementById('grossMarginChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+      datasets: [
+        {
+          data: [83, 81, 84, 84, 85, 83, 82, 81, 80, 84],
+          borderColor: 'rgb(99, 102, 241)',
+          tension: 0.4,
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#fff',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: 79,
+          max: 86,
+          ticks: {
+            callback: (value) => value + '%',
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  })
+
+  // EBITDA Chart
+  charts.ebitda = new Chart(document.getElementById('ebitdaChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+      datasets: [
+        {
+          data: [-520000, -525000, -480000, -540000, -420000, -410000, -380000],
+          borderColor: 'rgb(168, 85, 247)',
+          tension: 0.4,
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#fff',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          ticks: {
+            callback: (value) => '$' + Math.abs(value / 1000) + 'k',
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  })
+}
