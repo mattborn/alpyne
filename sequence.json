@@ -88,7 +88,7 @@
     {
       "action": "click",
       "target": ".client-list .nav-button:nth-child(2)",
-      "duration": 1200
+      "duration": 3000
     },
     {
       "action": "hover",
