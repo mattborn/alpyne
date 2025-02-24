@@ -356,6 +356,7 @@ initApp().then(() => {
   initEmptyViews()
   initSequence()
   initGlobexCharts()
+  initFAQ()
 })
 
 // Toggle client picker - prevent view switching
@@ -431,6 +432,27 @@ ScrollReveal().reveal('h1,.lede,.button,.browser,.pain-point,.step,.value-prop',
   interval: 100,
   origin: 'bottom',
 })
+
+// Load and render FAQ section
+async function initFAQ() {
+  const response = await fetch('faq.jsonld')
+  const data = await response.json()
+
+  const faqList = document.querySelector('.faq-list')
+  faqList.innerHTML = data.mainEntity
+    .map(
+      ({ name, acceptedAnswer }, index) => `
+     <details class="faq-item"${index === 0 ? ' open' : ''}>
+       <summary>
+         <h3>${name}</h3>
+         <i class="fa-regular fa-angle-down"></i>
+       </summary>
+        <p>${acceptedAnswer.text}</p>
+     </details>
+    `,
+    )
+    .join('')
+}
 
 // Store chart instances
 let charts = {}

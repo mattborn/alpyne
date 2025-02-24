@@ -803,3 +803,44 @@ cite {
 .hidden {
   display: none;
 }
+
+/* FAQ Section */
+#faq {
+  background: var(--color-gray-100);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--color-background);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.faq-item summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.faq-item svg {
+  transition: transform 0.2s ease;
+}
+.faq-item[open] svg {
+  transform: rotate(180deg);
+}
+
+::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item h3 .faq-item p {
+  color: var(--color-gray-600);
+  font-size: 1.125rem;
+}
