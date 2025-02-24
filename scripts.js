@@ -426,7 +426,7 @@ async function initEmptyViews() {
 document.getElementById('play-button').addEventListener('click', startSequence)
 
 // Initialize ScrollReveal
-ScrollReveal().reveal('h1,.lede,.button,.browser,.pain-point,.step,.value-prop', {
+ScrollReveal().reveal('h1,.lede,.browser,.pain-point,.step,.value-prop', {
   cleanup: true,
   distance: '10%',
   interval: 100,
@@ -434,9 +434,9 @@ ScrollReveal().reveal('h1,.lede,.button,.browser,.pain-point,.step,.value-prop',
 })
 
 // Load and render FAQ section
-async function initFAQ() {
-  const response = await fetch('faq.jsonld')
-  const data = await response.json()
+function initFAQ() {
+  const faqScript = document.querySelector('#faq script[type="application/ld+json"]')
+  const data = JSON.parse(faqScript.textContent)
 
   const faqList = document.querySelector('.faq-list')
   faqList.innerHTML = data.mainEntity

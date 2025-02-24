@@ -63,6 +63,7 @@ footer .button:hover {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   margin: 0;
   overflow: hidden;
+  transform-origin: 0 0;
   width: 100%;
 }
 .browser-bar {
@@ -96,6 +97,27 @@ footer .button:hover {
 .browser-content {
   aspect-ratio: 16/9;
   background: var(--color-background);
+}
+
+/* Preview responsive */
+@media (max-width: 768px) {
+  #preview .content {
+    padding: 1rem;
+  }
+
+  .browser {
+    margin: 0 0 -177px;
+    transform: scale(0.75);
+    width: calc(400vw / 3 - 8rem / 3);
+  }
+}
+
+@media (max-width: 480px) {
+  .browser {
+    margin: 0 0 -355px;
+    transform: scale(0.5);
+    width: calc(200vw - 4rem);
+  }
 }
 
 /* Quote */
@@ -166,14 +188,6 @@ cite {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-.value-prop.alt .graphic {
-  grid-column: 1;
-}
-
-.value-prop.alt .text {
-  grid-column: 2;
 }
 
 .graphic {
@@ -266,6 +280,10 @@ cite {
 @media (max-width: 768px) {
   .value-prop .content {
     grid-template-columns: 1fr;
+  }
+
+  .alt .graphic {
+    order: 1;
   }
 
   .steps {
@@ -387,7 +405,7 @@ cite {
   position: absolute;
   right: 0;
   top: 100%;
-  z-index: 10;
+  z-index: 3;
 }
 
 .client-picker.active .client-list {
@@ -670,7 +688,7 @@ cite {
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 0.25rem;
-  z-index: 10;
+  z-index: 3;
   min-width: 200px;
 }
 
@@ -692,7 +710,7 @@ cite {
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
-  z-index: 10;
+  z-index: 3;
   min-width: 200px;
 }
 
@@ -748,7 +766,7 @@ cite {
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 4;
 }
 
 .oauth-overlay h3 {
@@ -809,6 +827,10 @@ cite {
   background: var(--color-gray-100);
 }
 
+#faq h2 {
+  margin: 0 0 1rem;
+}
+
 .faq-list {
   display: flex;
   flex-direction: column;
@@ -825,6 +847,7 @@ cite {
   align-items: center;
   cursor: pointer;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   list-style: none;
 }
@@ -840,7 +863,7 @@ cite {
   display: none;
 }
 
-.faq-item h3 .faq-item p {
+.faq-item p {
   color: var(--color-gray-600);
-  font-size: 1.125rem;
+  margin: 1rem 0 0;
 }
