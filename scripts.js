@@ -108,29 +108,23 @@ function initGrids(data) {
       id: 'teamGrid',
       columnDefs: [
         { field: 'name', headerName: 'Name' },
-        { field: 'role', headerName: 'Role' },
+        { field: 'email', headerName: 'E-mail' },
         { field: 'clients', headerName: 'Clients', valueFormatter: (p) => p.value.join(', ') },
-        { field: 'lastActive', headerName: 'Last Active' },
+        { field: 'role', headerName: 'Role' },
       ],
       data: data.team,
-    },
-    {
-      id: 'sourcesGrid',
-      columnDefs: [
-        { field: 'name', headerName: 'Name' },
-        { field: 'type', headerName: 'Type' },
-        { field: 'clients', headerName: 'Clients', valueFormatter: (p) => p.value.join(', ') },
-        { field: 'status', headerName: 'Status' },
-      ],
-      data: data.sources,
     },
     {
       id: 'dashboardsGrid',
       columnDefs: [
         { field: 'name', headerName: 'Name' },
         { field: 'type', headerName: 'Type' },
-        { field: 'clients', headerName: 'Clients', valueFormatter: (p) => p.value.join(', ') },
-        { field: 'lastUpdated', headerName: 'Last Updated' },
+        { field: 'owner', headerName: 'Owner' },
+        {
+          field: 'createdAt',
+          headerName: 'Created At',
+          valueFormatter: (p) => new Date(p.value).toLocaleDateString(),
+        },
       ],
       data: data.dashboards,
     },

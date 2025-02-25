@@ -867,3 +867,33 @@ cite {
   color: var(--color-gray-600);
   margin: 1rem 0 0;
 }
+
+#benefits {
+  background: var(--color-gray-100);
+}
+
+.benefit-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.benefit-card {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  min-width: 280px;
+  padding: 2rem;
+}
+
+.benefit-card i {
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+
+.benefit-card h3 {
+  margin: 0;
+}

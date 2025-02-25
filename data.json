@@ -37,67 +37,51 @@
   "team": [
     {
       "name": "John Smith",
-      "role": "CFO",
+      "email": "john@example.com",
       "clients": ["Acme Corp", "Globex Inc"],
-      "lastActive": "2024-03-20"
+      "role": "Admin"
     },
     {
       "name": "Maria Garcia",
-      "role": "Controller",
+      "email": "maria@example.com",
       "clients": ["Stark Industries"],
-      "lastActive": "2024-03-21"
+      "role": "Member"
     },
     {
       "name": "David Chen",
-      "role": "Analyst",
+      "email": "david@example.com",
       "clients": ["Acme Corp", "Stark Industries"],
-      "lastActive": "2024-03-21"
-    }
-  ],
-  "sources": [
-    {
-      "name": "QuickBooks Online",
-      "type": "Accounting",
-      "clients": ["Acme Corp", "Globex Inc", "Stark Industries"],
-      "status": "Connected"
-    },
-    {
-      "name": "Stripe",
-      "type": "Payment",
-      "clients": ["Acme Corp", "Stark Industries"],
-      "status": "Connected"
-    },
-    {
-      "name": "Bill.com",
-      "type": "AP/AR",
-      "clients": ["Globex Inc"],
-      "status": "Error"
+      "role": "Member"
     }
   ],
   "dashboards": [
     {
       "name": "Executive Summary",
-      "type": "Financial",
-      "clients": ["Acme Corp", "Globex Inc", "Stark Industries"],
-      "lastUpdated": "2024-03-21"
+      "type": "Standard",
+      "owner": "John Smith",
+      "createdAt": "2024-03-01T12:00:00Z"
     },
     {
       "name": "Cash Flow",
-      "type": "Financial",
-      "clients": ["Acme Corp", "Stark Industries"],
-      "lastUpdated": "2024-03-21"
+      "type": "Custom",
+      "owner": "Maria Garcia",
+      "createdAt": "2024-03-15T09:30:00Z"
     },
     {
       "name": "Sales Analysis",
-      "type": "Operations",
-      "clients": ["Globex Inc"],
-      "lastUpdated": "2024-03-20"
+      "type": "Custom",
+      "owner": "David Chen",
+      "createdAt": "2024-03-20T16:45:00Z"
     }
   ],
   "emptyViews": {
     "view-reporting": {
       "title": "Reporting",
       "description": "Create and customize financial reports and dashboards."
+    },
+    "view-forecasting": {
+      "title": "Forecasting",
+      "description": "Create and manage financial forecasts and projections."
     },
     "view-spreadsheets": {
       "title": "Spreadsheets",

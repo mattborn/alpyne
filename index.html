@@ -71,10 +71,11 @@
 
     <section id="hero">
       <div class="content">
+        <p>Built for Fractional CFOs by a CFO</p>
         <h1>Stop wrangling client data. Automate it.</h1>
         <p class="lede">
-          Alpyne brings all your clients’ systems into one seamless platform, just the way you want it--so you can save
-          hours, cut costs and scale your practice. Built for Fractional CFOs, by a CFO.
+          Alpyne brings all your clients’ systems into one seamless platform, gives you real-time insights—so you can
+          save hours, cut costs and scale your practice.
         </p>
         <a href="https://calendly.com/bryan-alpyne/30min" class="button" target="_blank">Get a demo</a>
       </div>
@@ -148,6 +149,10 @@
                     <i class="fa-regular fa-chart-mixed"></i>
                     <span>Reporting</span>
                   </button>
+                  <button class="nav-button" data-view="forecasting">
+                    <i class="fa-regular fa-compass"></i>
+                    <span>Forecasting</span>
+                  </button>
                   <button class="nav-button" data-view="spreadsheets">
                     <i class="fa-regular fa-table"></i>
                     <span>Spreadsheets</span>
@@ -183,11 +188,6 @@
                     </div>
 
                     <div class="table-section">
-                      <h3>Sources</h3>
-                      <div id="sourcesGrid" class="ag-theme-alpine"></div>
-                    </div>
-
-                    <div class="table-section">
                       <h3>Dashboards</h3>
                       <div id="dashboardsGrid" class="ag-theme-alpine"></div>
                     </div>
@@ -219,6 +219,13 @@
                   <div class="empty-state">
                     <div class="view-title">Reporting</div>
                     <p>Create custom reports and dashboards with real-time data from all your connected systems.</p>
+                    <div class="button">Get a demo</div>
+                  </div>
+                </div>
+                <div class="view" id="view-forecasting">
+                  <div class="empty-state">
+                    <div class="view-title">Forecasting</div>
+                    <p>Sync your financial data directly with Google Sheets for live forecasting and modeling.</p>
                     <div class="button">Get a demo</div>
                   </div>
                 </div>
@@ -364,7 +371,7 @@
             </p>
           </div>
           <div class="pain-point">
-            <h3>Standardizing Data</h3>
+            <h3>Non-standardized Data</h3>
             <p>
               Nothing matches. Different formats and structures force you to manually clean, reconcile and reformat
               before anything is usable.
@@ -396,6 +403,25 @@
       </div>
     </section>
 
+    <section id="benefits">
+      <div class="content">
+        <div class="benefit-cards">
+          <div class="benefit-card">
+            <i class="fa-light fa-clock" style="font-size: 72px"></i>
+            <h3>Save 15+ Hours Per Month</h3>
+          </div>
+          <div class="benefit-card">
+            <i class="fa-light fa-rocket" style="font-size: 72px"></i>
+            <h3>Close Clients Faster</h3>
+          </div>
+          <div class="benefit-card">
+            <i class="fa-light fa-handshake" style="font-size: 72px"></i>
+            <h3>Keep Clients Longer</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="transition">
       <div class="content">
         <i class="fa-solid fa-mountain-sun"></i>
@@ -404,123 +430,13 @@
           Alpyne is designed to automate the manual work, unify your clients’ systems, and give you total control over
           financial data and workflows.
         </p>
-      </div>
-    </section>
-
-    <section class="value-prop">
-      <div class="content">
-        <div class="text">
-          <small>Clients</small>
-          <h2>Command Center for all your Clients</h2>
-          <p class="bigger-copy">
-            Easily switch between clients. Manage all their data from one centralized hub. No more juggling multiple
-            logins or switching between platforms—everything you need is in one place.
-          </p>
-        </div>
-        <img
-          alt="Alpyne UI showing client portfolio"
-          class="graphic"
-          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997299/Alpyne/command-center-feb19_2x_hzoww2.png"
-        />
-      </div>
-    </section>
-
-    <section class="value-prop alt">
-      <div class="content">
-        <img
-          alt="Alpyne integrates with all popular platforms"
-          class="graphic"
-          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997300/Alpyne/data-standardization-feb19_2x_jmjtil.png"
-        />
-        <div class="text">
-          <small>Data</small>
-          <h2>Automated Data Standardization</h2>
-          <p class="bigger-copy">
-            Alpyne pulls financial data from accounting, CRM, and billing systems and automatically standardizes it to a
-            consistent format. Skip the hours of manual cleanup and reconciliation—your data is ready to use instantly.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="value-prop">
-      <div class="content">
-        <div class="text">
-          <small>Mapping</small>
-          <h2>Financial Power-House</h2>
-          <p class="bigger-copy">
-            Alpyne doesn’t just aggregate and standardize your clients’ financial data—it empowers you to create and
-            customize financial statements, perform multi-entity consolidations, and remap chart of accounts without
-            altering client systems. Whether you’re building GAAP-aligned statements or grouping accounts for budgeting
-            and reporting, Alpyne gives you the flexibility to adapt to each client’s unique needs.
-          </p>
-        </div>
-        <img
-          alt="Alpyne UI showing multiple account ledgers"
-          class="graphic"
-          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1740435948/Alpyne/powerhouse-feb24_2x_vqitov.png"
-        />
-      </div>
-    </section>
-
-    <section class="value-prop alt">
-      <div class="content">
-        <img
-          alt="Alpyne UI showing real-time dashboards"
-          class="graphic"
-          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997298/Alpyne/dashboards-feb19_2x_lm4peq.png"
-        />
-        <div class="text">
-          <small>Reports</small>
-          <h2>Real-Time Dashboards and Reporting</h2>
-          <p class="bigger-copy">
-            Replace manually created, static reports with real-time dashboards that update automatically as your
-            clients’ systems sync.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="value-prop">
-      <div class="content">
-        <div class="text">
-          <small>Spreadsheets</small>
-          <h2>Seamless Google Sheets Integration</h2>
-          <p class="bigger-copy">
-            Some things are just better in spreadsheets. Sync financial data directly into Google Sheets for live
-            forecasting, modeling, and reporting. No exporting, importing, or outdated spreadsheets—your numbers are
-            always up to date.
-          </p>
-        </div>
-        <div class="graphic" id="google-sheets">
-          <i class="fa-solid fa-file-spreadsheet"></i>
-          <i class="fa-solid fa-file-excel"></i>
-        </div>
-      </div>
-    </section>
-
-    <section class="value-prop alt">
-      <div class="content">
-        <img
-          alt="Command center interface showing client portfolio"
-          class="graphic"
-          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997298/Alpyne/invite-feb19_2x_av8ggo.png"
-        />
-        <div class="text">
-          <small>Collaboration</small>
-          <h2>Collaborate Across Your Entire Financial Team</h2>
-          <p class="bigger-copy">
-            Alpyne lets you collaborate effortlessly with your clients’ teams—bookkeepers, accountants, analysts, and
-            executives—all from one central hub. Assign roles, share live reports, and keep everyone aligned with
-            real-time data.
-          </p>
-        </div>
+        <a href="https://calendly.com/bryan-alpyne/30min" class="button" target="_blank">Get a demo</a>
       </div>
     </section>
 
     <section id="process">
       <div class="content">
-        <h2>How It Works</h2>
+        <h2>Get started in minutes</h2>
         <div class="steps">
           <div class="step">
             <i class="fa-solid fa-square-1"></i>
@@ -547,6 +463,115 @@
             <h3>Collaborate Seamlessly</h3>
             <p class="bigger-copy">Work with your team and clients in one central, live workspace.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-prop">
+      <div class="content">
+        <div class="text">
+          <small>Clients</small>
+          <h2>Centralized Client Hub</h2>
+          <p class="bigger-copy">
+            Easily switch between your clients and manage their data from the same location. No more logging in and out
+            of multiple systems.
+          </p>
+        </div>
+        <img
+          alt="Alpyne UI showing client portfolio"
+          class="graphic"
+          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997299/Alpyne/command-center-feb19_2x_hzoww2.png"
+        />
+      </div>
+    </section>
+
+    <section class="value-prop alt">
+      <div class="content">
+        <img
+          alt="Alpyne integrates with all popular platforms"
+          class="graphic"
+          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997300/Alpyne/data-standardization-feb19_2x_jmjtil.png"
+        />
+        <div class="text">
+          <small>Data</small>
+          <h2>Instant Data Standardization</h2>
+          <p class="bigger-copy">
+            Alpyne pulls financial data from accounting, CRM, billing, timekeeping, payroll, bank, eCommerce, marketing,
+            and sales systems and automatically standardizes it to a consistent format. Skip the hours of manual cleanup
+            and reconciliation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-prop">
+      <div class="content">
+        <div class="text">
+          <small>Mapping</small>
+          <h2>Financial Power-House</h2>
+          <p class="bigger-copy">
+            Leverage the power of Alpyne to easily create financial statements, perform multi-entity consolidations,
+            remap chart of accounts and more. All without altering client systems.
+          </p>
+        </div>
+        <img
+          alt="Alpyne UI showing multiple account ledgers"
+          class="graphic"
+          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1740518251/Alpyne/powerhouse-feb25_2x_jqpadz.png"
+        />
+      </div>
+    </section>
+
+    <section class="value-prop alt">
+      <div class="content">
+        <img
+          alt="Alpyne UI showing real-time dashboards"
+          class="graphic"
+          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997298/Alpyne/dashboards-feb19_2x_lm4peq.png"
+        />
+        <div class="text">
+          <small>Reports</small>
+          <h2>Dashboards &amp; Reporting</h2>
+          <p class="bigger-copy">
+            Replace manually created, static reports with real-time dashboards that update automatically as your
+            clients’ systems sync.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-prop">
+      <div class="content">
+        <div class="text">
+          <small>Spreadsheets</small>
+          <h2>Google Sheets Integration</h2>
+          <p class="bigger-copy">
+            Some things are just better in spreadsheets. Sync financial data directly into Google Sheets for live
+            forecasting, modeling, and reporting. No exporting, importing, or outdated spreadsheets—your numbers are
+            always up to date.
+          </p>
+        </div>
+        <div class="graphic" id="google-sheets">
+          <i class="fa-solid fa-file-spreadsheet"></i>
+          <i class="fa-solid fa-file-excel"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-prop alt">
+      <div class="content">
+        <img
+          alt="Command center interface showing client portfolio"
+          class="graphic"
+          src="https://res.cloudinary.com/dlb7hetnl/image/upload/v1739997298/Alpyne/invite-feb19_2x_av8ggo.png"
+        />
+        <div class="text">
+          <small>Collaboration</small>
+          <h2>Share Real-Time Insights</h2>
+          <p class="bigger-copy">
+            Assign roles for tiered access, share live reports and keep your clients and their teams aligned—all from
+            one central hub.
+          </p>
         </div>
       </div>
     </section>
