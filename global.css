@@ -331,3 +331,21 @@ footer nav a:hover {
     gap: 2rem;
   }
 }
+
+/* Legal */
+
+.legal {
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 6rem 2rem;
+}
+
+.legal h2 {
+  font-size: 1.5rem;
+  letter-spacing: unset;
+  margin: 2rem 0 1rem;
+}
+.legal p {
+  margin: 0 0 1rem;
+}
