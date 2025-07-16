@@ -1,0 +1,49 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global link styles */
+a {
+  text-decoration: none;
+}
+
+#confirmation .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 20%;
+}
+
+.confirmation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.confirmation-content p {
+  margin: 0;
+}
+
+.confirmation-content a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.confirmation-content a:hover {
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  #confirmation .content {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
+}
+
+footer {
+  margin-top: auto;
+}
